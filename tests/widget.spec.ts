@@ -23,9 +23,9 @@ test.describe('Uchi.ru widget ', () => {
   test('has correct title', async ({ page }) => {
     await widgetPage.openWidget();
 
-    const articles = await widgetPage.getPopularArticles();
+    const articles = widgetPage.getPopularArticles();
 
-    await articles[0].click();
+    await articles.first().click();
 
     await widgetPage.clickWriteToUs();
 
